@@ -4,16 +4,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="My first PWA" />
+    <meta name="description" content="My first web page with a compound statement" />
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Conor" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>GitHub page as PWA template</title>
+    <title>My First Web Page With a Compound if Statement</title>
     <link
       rel="canonical"
-      href="https://conor-otoole.github.io/ICS2O-PWA-Test/"
+      href="https://conor-otoole.github.io/ICS2O-Unit5-04/"
     />
-    <link rel="manifest" href="/ICS2O-PWA-Test/manifest.webmanifest" />
+    <link rel="manifest" href="/ICS2O-Unit5-04/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
@@ -45,35 +45,59 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   </head>
-  <title>My first PWA</title>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+          <span class="mdl-layout-title"
+            >My First Web Page With a Compound if Statement</span
+          >
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p></p>
-        <img
-          src="./images/notebook-animation.svg"
-          alt="Computer"
-          width="25%"
-          height="25%"
-        />
-        <p></p>
+        <p>Select your age:</p>
+        <div id="slider-value">Your age: ?</div>
+        <!-- Slider with Starting Value -->
+        <!-- Note: I added and ID to this component, so I could reference it in code -->
+        <!-- Note: I also placed it inside a "label" for accessability -->
+        <label>
+          Slider's Value
+          <input
+            id="slider"
+            class="mdl-slider mdl-js-slider"
+            type="range"
+            min="1"
+            max="99"
+            value="25"
+            tabindex="0"
+            onchange="updateSliderValue(this.value)"
+          />
+        </label>
+        <div
+          class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+        >
+          <select class="mdl-textfield__input" id="day" name="day">
+            <option></option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+          <label class="mdl-textfield__label" for="day">Day Of The Week</label>
+        </div>
         <!-- Raised button with ripple -->
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
           onclick="myButtonClicked()"
         >
-          Say "Hello, World!"
+          Calculate
         </button>
-        <!-- basic text -->
-        <p></p>
-        <div id="hello-world"></div>
+        <div id="price"></div>
       </main>
     </div>
   </body>
